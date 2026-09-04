@@ -1,0 +1,37 @@
+{
+  "expediente_id": "2026-REG-CRZ-001784",
+  "producto_codigo": "CRZ-042",
+  "producto_nombre": "CORAZILIMAB",
+  "afirmaciones_modulo2": [
+    {
+      "id": "AF-001",
+      "texto": "El estudio pivotal demostró reducción significativa de eventos cardiovasculares mayores frente a placebo.",
+      "documento_id": "M2-01-01",
+      "pagina_folio": "Folio 30"
+    },
+    {
+      "id": "AF-002",
+      "texto": "El producto demostró superioridad frente al tratamiento estándar en población pediátrica menor de 12 años.",
+      "documento_id": "M2-01-02",
+      "pagina_folio": "Folio 31"
+    }
+  ],
+  "evidencia_primaria": [
+    {
+      "id": "EV-001",
+      "modulo": "M3",
+      "texto": "Estudio fase III, aleatorizado, doble ciego, 812 pacientes adultos, comparador placebo. Se observó reducción significativa de eventos cardiovasculares mayores (HR 0.72, IC95% 0.58-0.89).",
+      "documento_id": "M3-05-01",
+      "pagina_folio": "Folio 2200",
+      "entidad_responsable": "Biofarma Andina S.A.S."
+    },
+    {
+      "id": "EV-002",
+      "modulo": "M4",
+      "texto": "Estudios preclínicos en modelo animal de toxicidad crónica, sin hallazgos relevantes a dosis terapéuticas.",
+      "documento_id": "M4-01-01",
+      "pagina_folio": "Folio 1800",
+      "entidad_responsable": "Biofarma Andina S.A.S."
+    }
+  ]
+}

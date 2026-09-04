@@ -1,0 +1,20 @@
+{
+  "expediente_id": "2026-REG-CRZ-001784",
+  "producto_codigo": "CRZ-042",
+  "producto_nombre": "CORAZILIMAB",
+  "molecula": "corazilimab",
+  "nombre_por_modulo": [
+    {"modulo": "M1", "valor": "Corazilimab", "documento_id": "M1-01-01", "pagina_folio": "Folio 5"},
+    {"modulo": "M3", "valor": "Corazilimab", "documento_id": "M3-02-01", "pagina_folio": "Folio 2100"},
+    {"modulo": "M8", "valor": "Corazilimab Inyectable", "documento_id": "M8-01-01", "pagina_folio": "Folio 450"}
+  ],
+  "concentracion_por_modulo": [
+    {"modulo": "M1", "valor": "50 mg/mL", "documento_id": "M1-01-02", "pagina_folio": "Folio 6"},
+    {"modulo": "M3", "valor": "50 mg/mL", "documento_id": "M3-02-05", "pagina_folio": "Folio 2110"},
+    {"modulo": "M8", "valor": "50 mg/mL", "documento_id": "M8-01-01", "pagina_folio": "Folio 451"}
+  ],
+  "almacenamiento_por_modulo": [
+    {"modulo": "M3", "valor": "15-25°C", "documento_id": "M3-02-08", "pagina_folio": "Folio 2151", "entidad_responsable": "Biofarma Andina S.A.S."},
+    {"modulo": "M8", "valor": "2-8°C", "documento_id": "M8-02-01", "pagina_folio": "Folio 450", "entidad_responsable": "Biofarma Andina S.A.S."}
+  ]
+}

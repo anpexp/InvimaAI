@@ -1,0 +1,71 @@
+services:
+  agente1-legal:
+    build: ./Agente1
+    container_name: agente1-legal
+    ports:
+      - "8001:8001"
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-flash-latest}
+
+  agente2-reliance:
+    build: ./agente2_reliance
+    container_name: agente2-reliance
+    ports:
+      - "8002:8002"
+
+  agente3-clinico:
+    build: ./agente3_clinico
+    container_name: agente3-clinico
+    ports:
+      - "8003:8003"
+
+  # Orquestador Principal (FastAPI, :8080) + Dashboard HITL en Streamlit
+  # (:8501), en un solo contenedor (ver orquestador/entrypoint.sh).
+  orquestador:
+    build: ./orquestador
+    container_name: orquestador
+    ports:
+      - "8080:8080"
+      - "8501:8501"
+    environment:
+      AGENTE1_URL: http://agente1-legal:8001/analyze/legal
+      AGENTE2_URL: http://agente2-reliance:8002/agente2/analizar
+      AGENTE3_URL: http://agente3-clinico:8003/agente3/analizar
+      ORQUESTADOR_URL: http://localhost:8080
+      # Usada por /orquestador/consultar (barra de búsqueda del dossier).
+      # Sin ella, responde con un buscador heurístico en vez de Gemini.
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-flash-latest}
+    depends_on:
+      - agente1-legal
+      - agente2-reliance
+      - agente3-clinico
+
+  # Dashboard alterno en React (mockup InvimaAI) — pestaña "INVAIA" del rol
+  # Evaluador Técnico consume al Orquestador de verdad (ver
+  # src/lib/orquestador-api.ts). VITE_ORQUESTADOR_URL usa localhost porque
+  # el fetch corre en el navegador del usuario, no dentro del contenedor.
+  invima-pathfinder:
+    build: ./invima-pathfinder
+    container_name: invima-pathfinder
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_ORQUESTADOR_URL: http://localhost:8080
+    depends_on:
+      - orquestador
+
+# GEMINI_API_KEY (opcional): docker compose lee automáticamente un archivo
+# .env en esta misma carpeta para sustituir ${GEMINI_API_KEY}. Copiar
+# .env.example a .env y pegar la clave real ahí -- nunca hardcodear la
+# clave en este archivo, que es el que se versiona/comparte. Sin la
+# clave, Agente 1 sigue funcionando con su extractor heurístico (regex).
+#
+# Con `docker compose up --build` queda arriba el programa completo:
+#   Agente 1 (Legal)     -> http://localhost:8001/docs
+#   Agente 2 (Reliance)  -> http://localhost:8002/docs
+#   Agente 3 (Clínico)   -> http://localhost:8003/docs
+#   Orquestador (API)    -> http://localhost:8080/docs
+#   Dashboard Streamlit  -> http://localhost:8501
+#   Dashboard React      -> http://localhost:5173  (rol "Evaluador Técnico" -> pestaña INVAIA)

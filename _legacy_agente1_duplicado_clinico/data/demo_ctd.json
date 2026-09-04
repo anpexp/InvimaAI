@@ -1,0 +1,35 @@
+[
+  {
+    "metadata": {
+      "document_id": "M5-01-PKPD",
+      "modulo_seccion": "Módulo 5 / Eficacia / Estudio pivotal",
+      "version": "v1.0",
+      "fecha": "2026-01-15",
+      "rango_folios": "Folios 4601-4700",
+      "tipo_producto": "SINTESIS_QUIMICA"
+    },
+    "text": "Estudio pivotal aleatorizado, doble ciego, en 240 adultos con hipertension. La intervencion fue Producto X 10 mg una vez al dia durante 12 semanas, comparada contra placebo. El desenlace primario reportado fue el cambio de presion arterial sistolica frente a basal en la semana 12. La diferencia observada fue -8.4 mmHg frente a -3.1 mmHg con placebo."
+  },
+  {
+    "metadata": {
+      "document_id": "M4-02-TOX",
+      "modulo_seccion": "Módulo 4 / Farmacologia toxicologica / Seguridad",
+      "version": "v1.1",
+      "fecha": "2026-02-02",
+      "rango_folios": "Folios 2201-2280",
+      "tipo_producto": "SINTESIS_QUIMICA"
+    },
+    "text": "En el estudio de toxicidad repetida no se observaron hallazgos nuevos relacionados con la administracion de Producto X a las dosis evaluadas. La vida media t1/2 reportada en animales fue de 6.2 horas; este resultado no debe extrapolarse directamente a humanos."
+  },
+  {
+    "metadata": {
+      "document_id": "M3-01-QUAL",
+      "modulo_seccion": "Módulo 3 / Sustancia activa / Calidad",
+      "version": "v1.0",
+      "fecha": "2026-01-10",
+      "rango_folios": "Folios 801-860",
+      "tipo_producto": "SINTESIS_QUIMICA"
+    },
+    "text": "Producto X presenta una especificacion de pureza de no menos de 98.0 por ciento. Los metodos analiticos fueron validados para identidad, contenido e impurezas relacionadas."
+  }
+]

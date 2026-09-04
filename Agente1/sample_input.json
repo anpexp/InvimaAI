@@ -1,0 +1,31 @@
+{
+  "expediente_id": "2026-REG-CRZ-001784",
+  "producto_codigo": "CRZ-042",
+  "producto_nombre": "CORAZILIMAB",
+  "documentos": [
+    {
+      "documento_id": "M1-00-01",
+      "tipo_documento": "FORMULARIO_SOLICITUD",
+      "texto": "Solicitud de registro sanitario para CORAZILIMAB (corazilimab), concentracion 50 mg/mL, forma farmaceutica solucion inyectable. Titular: Biofarma Andina S.A.S. Fabricante declarado: Laboratorios PharmaCorp S.A.",
+      "version": "v1.0",
+      "fecha_documento": "2026-01-10",
+      "pagina_folio": "Folio 3"
+    },
+    {
+      "documento_id": "M1-00-05",
+      "tipo_documento": "BPM",
+      "texto": "Certificado de Buenas Practicas de Manufactura (BPM). Planta: Cali, Colombia. Fabricante: Manufacturas Quimicas del Cauca S.A.S. Vigencia hasta: 2026-09-20.",
+      "version": "v1.0",
+      "fecha_documento": "2025-09-20",
+      "pagina_folio": "Folio 45"
+    },
+    {
+      "documento_id": "M1-00-08",
+      "tipo_documento": "CPP",
+      "texto": "Certificado de Producto Farmaceutico (CPP) para CORAZILIMAB, emitido por la autoridad sanitaria de origen. Titular: Biofarma Andina S.A.S. Vigencia hasta: 2026-07-01.",
+      "version": "v1.0",
+      "fecha_documento": "2024-07-01",
+      "pagina_folio": "Folio 60"
+    }
+  ]
+}
