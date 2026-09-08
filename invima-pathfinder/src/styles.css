@@ -1,0 +1,204 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * InvimaAI — sistema de diseño institucional.
+ * Azul gubernamental, verde de aprobación, ámbar de advertencia, rojo de denegación.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-approve: var(--approve);
+  --color-approve-foreground: var(--approve-foreground);
+  --color-approve-soft: var(--approve-soft);
+  --color-warn: var(--warn);
+  --color-warn-foreground: var(--warn-foreground);
+  --color-warn-soft: var(--warn-soft);
+  --color-deny: var(--deny);
+  --color-deny-foreground: var(--deny-foreground);
+  --color-deny-soft: var(--deny-soft);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-panel: 0 1px 2px oklch(0.27 0.08 260 / 0.05), 0 10px 28px oklch(0.27 0.08 260 / 0.06);
+  --shadow-raised: 0 4px 8px oklch(0.27 0.08 260 / 0.07), 0 22px 48px oklch(0.27 0.08 260 / 0.14);
+}
+
+:root {
+  --radius: 0.85rem;
+  /* Paleta institucional exacta del encargo original: azul gubernamental
+     #0F2C59 / #1E3A8A, verde de aprobación #10B981, ámbar #F59E0B,
+     rojo de denegación #EF4444. */
+  --wash-approve: rgb(16 185 129 / 7%);
+  --wash-primary: rgb(30 58 138 / 8%);
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #1e3a8a;
+  --primary-foreground: #f8fafc;
+  --navy: #0f2c59;
+  --navy-foreground: #f8fafc;
+  --secondary: #eef2f9;
+  --secondary-foreground: #1e3a8a;
+  --muted: #eef2f9;
+  --muted-foreground: #64748b;
+  --accent: #e2e8f5;
+  --accent-foreground: #1e3a8a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fef2f2;
+  --approve: #10b981;
+  --approve-foreground: #065f46;
+  --approve-soft: #d1fae5;
+  --warn: #f59e0b;
+  --warn-foreground: #78350f;
+  --warn-soft: #fef3c7;
+  --deny: #ef4444;
+  --deny-foreground: #7f1d1d;
+  --deny-soft: #fee2e2;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #1e3a8a;
+  --chart-1: #1e3a8a;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #7c3aed;
+  --sidebar: #0f2c59;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #052e22;
+  --sidebar-accent: #1e3a8a;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: #24406e;
+  --sidebar-ring: #10b981;
+}
+
+.dark {
+  --wash-approve: rgb(52 211 153 / 10%);
+  --wash-primary: rgb(59 130 246 / 14%);
+  --background: #0b1220;
+  --foreground: #e2e8f0;
+  --card: #111a2e;
+  --card-foreground: #e2e8f0;
+  --popover: #111a2e;
+  --popover-foreground: #e2e8f0;
+  --primary: #3b82f6;
+  --primary-foreground: #f8fafc;
+  --navy: #16233f;
+  --navy-foreground: #e2e8f0;
+  --secondary: #1b2740;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1b2740;
+  --muted-foreground: #94a3b8;
+  --accent: #22314f;
+  --accent-foreground: #e2e8f0;
+  --destructive: #f87171;
+  --destructive-foreground: #fef2f2;
+  --approve: #34d399;
+  --approve-foreground: #6ee7b7;
+  --approve-soft: #0b3b2e;
+  --warn: #fbbf24;
+  --warn-foreground: #fcd34d;
+  --warn-soft: #4a2e05;
+  --deny: #f87171;
+  --deny-foreground: #fca5a5;
+  --deny-soft: #4c1111;
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 16%);
+  --ring: #3b82f6;
+  --sidebar: #0b1526;
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #34d399;
+  --sidebar-primary-foreground: #052e22;
+  --sidebar-accent: #1b2740;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: rgb(255 255 255 / 12%);
+  --sidebar-ring: #34d399;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(60rem 32rem at 8% -10%, var(--wash-approve), transparent 60%),
+      radial-gradient(50rem 28rem at 100% 0%, var(--wash-primary), transparent 55%);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility gov-header {
+  background-image: linear-gradient(100deg, #0f2c59, #1e3a8a);
+}
+
+@utility gov-rule {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-approve) 0%,
+    var(--color-approve) 33%,
+    var(--color-warn) 33%,
+    var(--color-warn) 66%,
+    var(--color-primary) 66%
+  );
+}
